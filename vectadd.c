@@ -29,10 +29,13 @@ int main(int argc, char ** argv) {
 
   int n = atoi(argv[1]);
 
+  printf ("Initializing two arrays of size %d with random numbers\n", n);
   float * a = initArray(n);
   float * b = initArray(n);
+  printf ("Creating an empty array of size %d\n", n);
   float * c = createArray(n);
 
+  printf ("Adding the elements of two arrays\n", n);
   vectAdd(n, a, b, c);
 
   return 0;
