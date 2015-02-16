@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
 #include <stdlib.h>
+#include <omp.h>
 
 float * createArray(int n) {
   return malloc(n * sizeof(float));
@@ -18,6 +19,7 @@ float * initArray(int n) {
 
 void vectAdd(int n, float * a, float * b, float * c) {
   int i;
+  #pragma omp parallel for
   for (i = 0; i < n; i++)
     c[i] = a[i] + b[i];
 }
